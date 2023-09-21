@@ -1,3 +1,3 @@
 package com.example.helloworld
 
-data class ContentEntity(val content: String)
+data class ContentEntity(val id:Int,val content: String)

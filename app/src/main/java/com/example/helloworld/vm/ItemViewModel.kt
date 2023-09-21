@@ -1,12 +1,17 @@
 package com.example.helloworld.vm
 
 import android.view.View
-import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.helloworld.ContentEntity
 
 class ItemViewModel : ViewModel() {
+     var currentData : MutableLiveData<ContentEntity>?= null
+
+    init {
+        currentData = MutableLiveData()
+    }
     fun onItemClick(view: View, item: Any) {
-        Toast.makeText(view.context, (item as ContentEntity).content, Toast.LENGTH_SHORT).show()
+        currentData!!.value = item as ContentEntity
     }
 }
